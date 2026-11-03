@@ -414,26 +414,26 @@ function renderHip(){
    {n:2,t:"O cliff de patentes aquece o mercado de M&amp;As do setor. E esse é o lado tático para os próximos 3 anos.",s:"parc",e:"Entre <b>US$ 200 e 300 bilhões</b> de receita perdem patente até 2030. Para repor esse faturamento a big pharma precisa comprar pipeline, e isso já aparece nos números: o primeiro semestre de 2026, com uns <b>US$ 130 bilhões em deals</b>, empatou com 2025 inteiro, e a relação entre patente vencendo e número de aquisições grandes é <b>positiva e relevante</b>. O ponto é que o cliff <b>não é um evento, é um regime</b>, com o pico concentrado justamente nos próximos anos."},
    {n:3,t:"É um play de beta. Dentro de biotech, o índice amplo tende a funcionar melhor do que escolher subsetores.",s:"open",e:"O retorno de biotech se concentra em poucos <b>saltos binários</b>: uma aprovação, um dado de fase 3, uma aquisição com prêmio. Os saltos binários, apesar de conseguirem apresentar ganhos assimétricos, são mais difíceis de antecipar. Um <b>índice amplo</b> consegue diversificar a exposição em diferentes subsetores, limitar a queda de uma perda relevante e cobrir o crescimento da tese como um todo."},
   ];
-  const q1v={"Q1/25":898,"Q2/25":891,"Q3/25":981,"Q4/25":747,"Q1/26":1087,"Q2/26":1036};
-  const qlabs=["Q1/25","Q2/25","Q3/25","Q4/25","Q1/26","Q2/26"];
-  const rt36=[[1689379200,65.3],[1692057600,61.7],[1694736000,59.8],[1697328000,58.3],[1700006400,62.5],[1702598400,65.7],[1705276800,65.1],[1707955200,71.9],[1710460800,69.1],[1713139200,66.6],[1715731200,66.5],[1718409600,67.6],[1721001600,67],[1723680000,68.4],[1726358400,67.8],[1728950400,69.1],[1731628800,70.3],[1734220800,68],[1736899200,66.7],[1739577600,64.7],[1741996800,63.3],[1744675200,65.4],[1747267200,64.9],[1749945600,65.4],[1752537600,64.4],[1755216000,64.9],[1757894400,69.2],[1760486400,70.6],[1763164800,70.7],[1765756800,72.2],[1768435200,72.3],[1771113600,72.6],[1773532800,75.6],[1776211200,77.8],[1778803200,79.3],[1781481600,83.2]];
+  const q1v={"Q2/25":891,"Q3/25":981,"Q4/25":747,"Q1/26":1087,"Q2/26":1036,"Q3/26":976};
+  const qlabs=["Q2/25","Q3/25","Q4/25","Q1/26","Q2/26","Q3/26"];
+  const rt36=[[1689379200,65.3],[1692057600,61.7],[1694736000,59.8],[1697328000,58.3],[1700006400,62.5],[1702598400,65.7],[1705276800,65.1],[1707955200,71.9],[1710460800,69.1],[1713139200,66.6],[1715731200,66.5],[1718409600,67.6],[1721001600,67],[1723680000,68.4],[1726358400,67.8],[1728950400,69.1],[1731628800,70.3],[1734220800,68],[1736899200,66.7],[1739577600,64.7],[1741996800,63.3],[1744675200,65.4],[1747267200,64.9],[1749945600,65.4],[1752537600,64.4],[1755216000,64.9],[1757894400,69.2],[1760486400,70.6],[1763164800,70.7],[1765756800,72.2],[1768435200,72.3],[1771113600,72.6],[1773532800,75.6],[1776211200,77.8],[1778803200,79.3],[1781481600,83.2],[1785504600,78.9],[1788183000,77.7],[1790775000,74.9]];
   const accWrap=(sub,inner)=>`<details class="acc"><summary>Acompanhamento trimestral <span class="accq">${sub}</span></summary><div class="accbody">${inner}</div></details>`;
   const ACC={
-   1:accWrap("fechamento Q2/26 · jun/26",`
-     <div class="ind"><h4>Novos trials de Fase 1 no trimestre</h4><span class="big">1.036</span> <span class="accq">registrados no ClinicalTrials.gov em abr–jun/26 (Fase 1 pura; registro global, ~220 países)</span>
-       ${bars(q1v,{labels:qlabs,color:"var(--ink-2)",highlight:["Q1/26","Q2/26"],hl:"var(--accent)"})}</div>
+   1:accWrap("fechamento Q3/26 · set/26",`
+     <div class="ind"><h4>Novos trials de Fase 1 no trimestre</h4><span class="big">976</span> <span class="accq">registrados no ClinicalTrials.gov em jul–set/26 (Fase 1 pura; registro global, ~220 países)</span>
+       ${bars(q1v,{labels:qlabs,color:"var(--ink-2)",highlight:["Q3/26"],hl:"var(--accent)"})}</div>
      <div class="refs"><b>Fonte:</b> ClinicalTrials.gov API v2 (query reproduzível por data de registro + fase).</div>`),
-   2:accWrap("acumulado de 2026 · até jun/26",`
+   2:accWrap("acumulado de 2026 · até set/26 (Q3)",`
      <p class="accnote">(O dado oficial só sai acumulado; cada trimestre aqui é <b>estimado</b> pela diferença dos acumulados e pelos deals anunciados no período, por isso o <b>*</b>.)</p>
-     <div class="ind"><h4>M&amp;A de biotech ≥ US$ 1 bi (acum. no ano)</h4><span class="big">33 deals · ~US$ 134 bi</span>
-       <div style="margin-top:6px"><p class="accq" style="margin:0 0 2px">nº de deals ≥US$1bi por trimestre</p>${bars({"a":2,"b":4,"c":7,"d":9,"e":16,"f":17},{labels:["Q1/25","Q2/25*","Q3/25*","Q4/25*","Q1/26*","Q2/26"],color:"var(--ink-2)",highlight:["f"],hl:"var(--accent)",fmt:v=>Math.round(v)})}</div>
-       <div style="margin-top:10px"><p class="accq" style="margin:0 0 2px">valor (US$ bi) por trimestre</p>${bars({"a":16,"b":17,"c":32,"d":48,"e":52,"f":79},{labels:["Q1/25","Q2/25*","Q3/25*","Q4/25*","Q1/26*","Q2/26"],color:"var(--ink-2)",highlight:["f"],hl:"var(--accent)",fmt:v=>Math.round(v)})}</div>
-       <p class="accnote"><b>Maiores deals do trimestre:</b> Sun Pharma/Organon ~US$12,6bi; Merck KGaA/Bio-Techne ~11,3bi; AbbVie/Apogee ~10,7bi; GSK/Nuvalent ~10,6bi. <span class="accq">(* a quebra por trimestre é estimada; os trackers só publicam o acumulado e o total do semestre)</span></p></div>
-     <div class="ind"><h4>IPOs de biotech (acum. no ano)</h4><span class="big">15 IPOs · ~US$ 4,5 bi</span>
-       <div style="margin-top:6px"><p class="accq" style="margin:0 0 2px">nº de IPOs por trimestre</p>${bars({"a":6,"b":1,"c":2,"d":2,"e":6,"f":8},{labels:["Q1/25*","Q2/25*","Q3/25*","Q4/25*","Q1/26","Q2/26*"],color:"var(--ink-2)",highlight:["f"],hl:"var(--accent)",fmt:v=>Math.round(v)})}</div>
-       <p class="accnote"><b>Maiores IPOs do 1º sem/26:</b> Parabilis ~US$770mi; Kailera ~US$719mi; Kardigan ~US$460mi. <span class="accq">(* trimestres estimados; só o Q1/26 é número fechado)</span></p></div>
-     <div class="refs"><b>Fontes:</b> STAT News, CNBC, DealForma, GlobalData (M&amp;A ≥US$1bi); BioPharma Dive (IPOs). Totais de semestre/ano são firmes; a divisão por trimestre é estimada a partir dos deals divulgados.</div>`),
-   3:accWrap("fechamento Q2/26 · jun/26",`
+     <div class="ind"><h4>M&amp;A de biotech ≥ US$ 1 bi por trimestre</h4><span class="big">~US$ 39 bi no Q3/26</span> <span class="accq">esfriou vs o recorde de ~US$ 79 bi no Q2</span>
+       <div style="margin-top:6px"><p class="accq" style="margin:0 0 2px">nº de deals grandes por trimestre</p>${bars({"a":4,"b":7,"c":9,"d":16,"e":17,"f":15},{labels:["Q2/25*","Q3/25*","Q4/25*","Q1/26*","Q2/26","Q3/26*"],color:"var(--ink-2)",highlight:["f"],hl:"var(--accent)",fmt:v=>Math.round(v)})}</div>
+       <div style="margin-top:10px"><p class="accq" style="margin:0 0 2px">valor (US$ bi) por trimestre</p>${bars({"a":17,"b":32,"c":48,"d":52,"e":79,"f":39},{labels:["Q2/25*","Q3/25*","Q4/25*","Q1/26*","Q2/26","Q3/26*"],color:"var(--ink-2)",highlight:["f"],hl:"var(--accent)",fmt:v=>Math.round(v)})}</div>
+       <p class="accnote"><b>Maiores deals do Q3/26:</b> Curium/Lantheus ~US$8bi (fusão); Lilly/AtaiBeckley ~3,8bi; Lilly/Merida ~2,9bi. O 1º semestre já tinha somado ~US$ 134 bi. <span class="accq">(* a quebra por trimestre é estimada; Q3 em base de valor anunciado, William Blair)</span></p></div>
+     <div class="ind"><h4>IPOs de biotech (acum. no ano)</h4><span class="big">22 IPOs · ~US$ 7,5 bi</span> <span class="accq">acum. até Q3/26 (JPMorgan): mais que qualquer ano inteiro de 2022 a 2025</span>
+       <div style="margin-top:6px"><p class="accq" style="margin:0 0 2px">nº de IPOs por trimestre</p>${bars({"a":1,"b":2,"c":2,"d":6,"e":8,"f":9},{labels:["Q2/25*","Q3/25*","Q4/25*","Q1/26","Q2/26*","Q3/26"],color:"var(--ink-2)",highlight:["f"],hl:"var(--accent)",fmt:v=>Math.round(v)})}</div>
+       <p class="accnote"><b>Q3/26:</b> 9 IPOs levantaram ~US$ 2,7 bi (William Blair). A janela de abertura de capital segue a mais forte em anos. <span class="accq">(* trimestres estimados)</span></p></div>
+     <div class="refs"><b>Fontes:</b> JPMorgan (Biopharma Deal Report Q3/26, acum. e IPOs); William Blair (The Quarterly Rx Q3/26, valor anunciado e IPOs do trimestre); STAT/DealForma (histórico). A divisão por trimestre é estimada.</div>`),
+   3:accWrap("fechamento Q3/26 · set/26",`
      <div class="ind"><h4>Termômetro de valuation <span class="accq">raio-X do XBI · 0 = barato, 100 = caro</span></h4>
        <div style="max-width:210px;margin:2px auto 0">${rxGauge(70)}</div>${rxScoreChart(160,true)}
        <div style="display:flex;gap:6px;justify-content:center;margin:2px 0 4px;flex-wrap:wrap">
@@ -442,7 +442,7 @@ function renderHip(){
          <span class="accq" style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2px 9px">pipeline: <b style="color:var(--down)">caro</b></span>
        </div>
        <p class="accnote">O gauge é o <b>raio-X do ETF inteiro</b> (31% com lucro, pelo P/E, + 69% pré-lucro, por caixa e pipeline): hoje <b style="color:var(--down)">~70, caro</b>. Atualizado a cada trimestre; método no bloco 07 da aba XBI US.</p></div>
-     <div class="ind"><h4>Razão XBI / IBB <span class="accq">apetite small-cap vs large-cap</span></h4><span class="big">80,1</span> <span class="accq">média do Q2/26</span>
+     <div class="ind"><h4>Razão XBI / IBB <span class="accq">apetite small-cap vs large-cap</span></h4><span class="big">78,8</span> <span class="accq">média do Q3/26</span>
        ${sline(rt36,{H:150,bandLast:3,bandLabel:"últ. tri"})}
        <p class="accnote">Últimos 36 meses; a faixa sombreada é o último trimestre. A razão é XBI ÷ IBB × 100; quanto mais alta, mais o mercado paga relativamente pelas small-caps (XBI) do que pelas gigantes (IBB).</p></div>
      <div class="ind"><h4>Biotechs com EV negativo <span class="accq">nº no setor (mundo), semestral</span></h4><span class="big">~56</span> <span class="accq">≈ 7-8% do setor, início/2026</span>
@@ -452,8 +452,8 @@ function renderHip(){
        <table class="miniq"><tr><th>Nº holdings</th><th>Maior peso</th><th>Top-10</th><th>Peso médio</th></tr>
        <tr><td>157</td><td>Apogee 1,48%</td><td>~13,3%</td><td>~0,64%</td></tr></table>
        </div>
-     <div class="ind"><h4>XBI vs S&amp;P 500 no trimestre</h4><span class="big">+24,0% <span class="accq">vs +15,1% do S&amp;P</span></span>
-       ${qgroup(["Q2/25","Q3/25","Q4/25","Q1/26","Q2/26"],{name:"XBI",col:"var(--accent)",vals:[2.3,20.9,22.1,4.8,24.0]},{name:"S&P 500",col:"var(--ink-2)",vals:[10.8,8.1,2.7,-4.4,15.1]})}</div>
+     <div class="ind"><h4>XBI vs S&amp;P 500 no trimestre</h4><span class="big">+0,7% <span class="accq">vs +2,2% do S&amp;P (Q3/26)</span></span>
+       ${qgroup(["Q3/25","Q4/25","Q1/26","Q2/26","Q3/26"],{name:"XBI",col:"var(--accent)",vals:[20.9,22.1,4.8,24.0,0.7]},{name:"S&P 500",col:"var(--ink-2)",vals:[8.1,2.7,-4.4,15.1,2.2]})}</div>
      <div class="refs"><b>Fontes:</b> Yahoo Finance (XBI, IBB, S&amp;P, cálculo nosso); SSGA factsheet do XBI (30/jun/26); Stifel/CapitalIQ (contagem de empresas com EV negativo, fim de ano).</div>`),
   };
   document.getElementById("hip").innerHTML=`
@@ -1104,8 +1104,8 @@ function renderVac(){
 }
 
 /* ===== dados das abas novas ===== */
-const HANGSENG={inception:"18/mar/2021",asof:"21/set/2026",ccy:"HKD",
- annual:{"2021":-31.4,"2022":-18.8,"2023":-22.8,"2024":-15.3,"2025":65.8,"2026":15.7},
+const HANGSENG={inception:"18/mar/2021",asof:"03/nov/2026",ccy:"HKD",
+ annual:{"2021":-31.4,"2022":-18.8,"2023":-22.8,"2024":-15.3,"2025":65.8,"2026":-4.7},
  series:[[1617154200,22.93],[1619746200,25.48],[1622424600,27.41],[1625016600,28.4],[1627608600,23.46],[1630373400,21.33],[1632965400,21.14],[1635471000,19.4],[1638235800,18.7],[1640914200,16.29],[1643592600,14.07],[1646011800,14.01],[1648690200,12.9],[1651195800,11.81],[1653960600,11.59],[1656552600,13.36],[1659058200,12.62],[1661909400,12.06],[1664501400,9.89],[1667179800,9.84],[1669771800,12.63],[1672363800,13.23],[1675128600,14.35],[1677547800,12.84],[1680226200,12.14],[1682645400,12.52],[1685496600,10.84],[1688088600,10.33],[1690767000,11.25],[1693445400,10.12],[1695951000,10.08],[1698715800,10.81],[1701307800,11.03],[1703813400,10.21],[1706664600,7.72],[1709170200,8.69],[1711589400,8.01],[1714440600,8.05],[1717119000,7.73],[1719538200,7.44],[1722389400,7.65],[1724981400,7.94],[1727659800,10.07],[1730338200,9.06],[1732843800,8.93],[1735608600,8.66],[1738027800,8.76],[1740706200,10.14],[1743384600,11.16],[1745976600,11.26],[1748568600,12.33],[1751247000,13.41],[1753925400,16.6],[1756431000,16.83],[1759195800,17.78],[1761874200,15.87],[1764293400,15.89],[1767144600,14.35],[1769736600,15.55],[1772155800,15.2],[1774920600,14.66],[1777512600,14.78],[1780018200,13.64],[1782783000,12.89],[1785461400,14.03],[1788139800,15.68],[1789954200,16.61]]};
 const MACROTESES={
  xbiThemes:[{label:"Oncologia",v:32,col:"var(--accent)"},{label:"Imunologia/Inflamação",v:13,col:"var(--ink)"},{label:"Neuro/SNC",v:13,col:"var(--up)"},{label:"Doença rara/genética",v:11,col:"var(--violet)"},{label:"Metabólico/Obesidade",v:8,col:"var(--watch)"},{label:"Terapia celular e gênica",v:8,col:"var(--accent-ink)"},{label:"Cardiovascular",v:5,col:"var(--down)"},{label:"Infecciosas/Vacinas",v:5,col:"var(--muted)"},{label:"Ferramentas/Plataforma",v:5,col:"#9bb"}],
@@ -1181,14 +1181,14 @@ function renderHangETF(){
   <section><div class="sec-h"><span class="sec-n">02</span><h2>Hang Seng Biotech vs XBI</h2></div>
     <div class="card"><h3>Base 100 desde o lançamento do ETF de HK (mar/2021)</h3><p class="cap"><b style="color:var(--ink)">▬ XBI (EUA)</b> vs <b style="color:var(--accent)">▬ Hang Seng Biotech (HK)</b></p>
       ${multiLine(cmp,{startTs:1614556800})}
-      <div class="refs"><b>Fontes:</b> Yahoo Finance (3069.HK e XBI, mensal); Hang Seng (3069.HK) até 21/set/2026.</div></div>
+      <div class="refs"><b>Fontes:</b> Yahoo Finance (3069.HK e XBI, mensal); Hang Seng (3069.HK) até 03/nov/2026.</div></div>
     <div class="card"><h3>Retorno anual (%)</h3>
       <div style="overflow-x:auto"><table><tr><th>Índice</th>${yrs.map(y=>'<th>'+(y===2026?'2026 (YTD)':(y===2021?'2021*':y))+'</th>').join("")}</tr>
       <tr><td><b>Hang Seng Biotech</b></td>${yrs.map(y=>cell(HANGSENG.annual[y])).join("")}</tr>
       <tr><td><b>XBI</b></td>${yrs.map(y=>cell(A.idx_annual.XBI[y])).join("")}</tr>
       </table></div>
-      <div class="read tight" style="margin-top:6px"><p><b>O grande rali do HK biotech foi 2025</b> (+66%), e 2026 seguiu no positivo (+16% YTD). O índice nasceu perto do topo de 2021 e passou <b>quatro anos seguidos no vermelho</b> (2021 a 2024), até virar de vez em 2025, quando explodiu o out-licensing para a big pharma ocidental. Em 2026 continua subindo no ano, mas <b>recuou desde o pico do fim de 2025</b> (o retorno de 12 meses está negativo, ~-9%). O XBI também foi forte (~+30% YTD). <span class="cap">*2021 é parcial (desde mar).</span></p></div>
-      <div class="refs"><b>Fontes:</b> Yahoo Finance (ChinaAMC 3069.HK, retorno ajustado por proventos); retornos anuais calculados, 2026 YTD até 21/set/2026.</div></div>
+      <div class="read tight" style="margin-top:6px"><p><b>O grande rali do HK biotech foi 2025</b> (+66%). O índice nasceu perto do topo de 2021 e passou <b>quatro anos seguidos no vermelho</b> (2021 a 2024), até virar de vez em 2025 com o out-licensing para a big pharma ocidental. Em <b>2026 devolveu o ganho</b>: chegou a subir ~16% no ano com o alívio regulatório de setembro, mas recuou e está em <b>~-4% YTD</b>. É um ativo de humor, puxado pela política EUA-China; o XBI (~+30% YTD) foi muito mais firme. <span class="cap">*2021 é parcial (desde mar).</span></p></div>
+      <div class="refs"><b>Fontes:</b> Yahoo Finance (ChinaAMC 3069.HK, retorno ajustado por proventos); retornos anuais calculados, 2026 YTD até 03/nov/2026.</div></div>
   </section>
   <section><div class="sec-h"><span class="sec-n">03</span><h2>O que puxou a alta de 2025</h2></div>
     <div class="card"><h3>Contribuição de cada nome = peso × retorno</h3><p class="cap">as maiores contribuições para o índice em 2025, em pontos percentuais (peso no índice × retorno da ação); o número à direita é o retorno de 2025, a preço ajustado</p>
